@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ClassRoom.Tests.ValueObjects
 {
     [TestClass]
-    [TestCategory("Objetos de valores")]
+    [TestCategory("Document Tests")]
     public class DocumentTests
     {
         [TestMethod]
