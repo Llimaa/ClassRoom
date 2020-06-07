@@ -27,9 +27,9 @@ namespace ClassRoom.Domain.ValueObjects
         {
             AddNotifications(new ValidationContract()
                 .Requires()
-                .HasMinLen(FirstName, 3, "FirstName", "O nome deve conter pelo menos 2 caracteres")
+                .HasMinLen(FirstName, 3, "FirstName", "O nome deve conter pelo menos 3 caracteres")
                 .HasMaxLen(FirstName, 20, "FirstName", "O nome deve conter no maximo 20 caracteres")
-                .HasMinLen(LastName, 3, "LastName", "O nome deve conter pelo menos 2 caracteres")
+                .HasMinLen(LastName, 3, "LastName", "O nome deve conter pelo menos 3 caracteres")
                 .HasMaxLen(LastName, 20, "LastName", "O nome deve conter no maximo 20 caracteres")
             );
         }
