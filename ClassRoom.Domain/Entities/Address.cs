@@ -30,6 +30,7 @@ namespace ClassRoom.Domain.Entities
                 .HasMinLen(country, 2, "country", "O campo deve ter pelo menos 2 caracteres")
                 .HasMaxLen(City, 60, "City", "O campo deve ter no máximo 60 caracteres")
                 .HasMaxLen(Country, 60, "Country", "O campo deve ter no máximo 60 caracteres")
+                .HasLen(ZipCode, 8, "ZipCode", "O cep está inválido")
             );
         }
     }
