@@ -10,14 +10,14 @@ namespace ClassRoom.Tests.ValueObjects
         [TestMethod]
         public void DeveRetornarFalsoQuandoDocumentoForFalso()
         {
-            var document = new Document("123-456-789-11");
+            var document = new Document("1212345678911");
             Assert.AreNotEqual(true, document.Valid);
         }
 
         [TestMethod]
         public void DeveRetornarTrueQuandoDocumentoFOrVerdadeiro()
         {
-            var document = new Document("585.791.050-13");
+            var document = new Document("58579105013");
             Assert.AreEqual(true, document.Valid);
         }
 

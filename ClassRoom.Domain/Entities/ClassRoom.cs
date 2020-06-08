@@ -1,5 +1,7 @@
-﻿using FluentValidator;
+﻿using ClassRoom.Domain.Enuns;
+using FluentValidator;
 using FluentValidator.Validation;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace ClassRoom.Domain.Entities
 {
@@ -7,14 +9,14 @@ namespace ClassRoom.Domain.Entities
     {
 
         public string Description { get; private set; }
-        public string Status { get; private set; }
-        public string Type { get; private set; }
+        public EClassRoomStatus Status { get; private set; }
+        public EClassRoomStatus Type { get; private set; }
 
-        public ClassRoom(string description, string status, string type)
+        public ClassRoom(string description, EClassRoomStatus status, EClassRoomStatus type)
         {
             Description = description;
-            Status = status;
-            Type = type;
+            Status = EClassRoomStatus.Free;
+            Type = EClassRoomStatus.Free;
 
             Description = description;
             Status = status;
@@ -22,7 +24,7 @@ namespace ClassRoom.Domain.Entities
 
             AddNotifications(new ValidationContract()
                 .Requires()
-                .HasMinLen(Description, 2, "Description", "O campo deve ter pelo menos 2 caracteres")
+                .HasMinLen(Description, 5, "Description", "O campo deve ter pelo menos 5 caracteres")
                 .HasMaxLen(Description, 60, "Description", "O campo deve ter no máximo 60 caracteres")
             );
         }
@@ -30,14 +32,14 @@ namespace ClassRoom.Domain.Entities
 
         public void Book()
         {
-            if (Status == "Free")
-                Status = "Reserved";
+            if (Status == EClassRoomStatus.Free)
+                Status = EClassRoomStatus.Reserved;
         }
 
         public void SetAsUnvaiable()
         {
-            if (Status != "Unavailable")
-                Status = "Unavailable";
+            if (Status != EClassRoomStatus.Unavailable)
+                Status = EClassRoomStatus.Unavailable;
         }
 
         public override string ToString()
