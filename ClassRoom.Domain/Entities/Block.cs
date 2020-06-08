@@ -13,8 +13,8 @@ namespace ClassRoom.Domain.Entities
 
             AddNotifications(new ValidationContract()
                 .Requires()
-                .HasMinLen(Description, 3, "Description", "O campo deve conter pelo menos 2 caracteres")
-                .HasMaxLen(Description, 50, "Description", "O campo deve conter no máximo 60 caracteres")
+                .HasMinLen(Description, 3, "Description", "O campo deve conter pelo menos 3 caracteres")
+                .HasMaxLen(Description, 50, "Description", "O campo deve conter no máximo 50 caracteres")
             );
         }
     }
